@@ -26,8 +26,8 @@ class PokemonDetailView: UIView {
         ])
 
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.widthAnchor.constraint(equalToConstant: 120).isActive = true
-        imageView.heightAnchor.constraint(equalToConstant: 120).isActive = true
+        imageView.widthAnchor.constraint(equalToConstant: 320).isActive = true
+        imageView.heightAnchor.constraint(equalToConstant: 320).isActive = true
 
         nameLabel.font = .systemFont(ofSize: 24, weight: .bold)
         typesLabel.font = .systemFont(ofSize: 16, weight: .medium)
@@ -48,7 +48,7 @@ class PokemonDetailView: UIView {
         Altura: \(p.height)
         Peso: \(p.weight)
         """
-        if let url = p.sprites.front_default {
+        if let url = p.sprites.other?.home?.frontDefault {
             URLSession.shared.dataTask(with: url) { data, _, _ in
                 guard let d = data, let img = UIImage(data: d) else { return }
                 DispatchQueue.main.async {

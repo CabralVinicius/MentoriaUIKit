@@ -4,7 +4,7 @@ class CellViewController: UIViewController {
     // 1) Recebemos o modelo no init e guardamos como let
     private let pokemon: PokemonDetail
     private let customCell: PokemonTableViewCell = {
-        let cell = PokemonTableViewCell(style: .default,
+        let cell = PokemonTableViewCell(style: .subtitle,
                                         reuseIdentifier: PokemonTableViewCell.identifier)
         // Opcional: remove qualquer seleção
         cell.selectionStyle = .none
@@ -27,12 +27,10 @@ class CellViewController: UIViewController {
         view.backgroundColor = .white
         title = pokemon.name.capitalized
 
-        // Adiciona a célula inteira como subview
         view.addSubview(customCell)
         customCell.translatesAutoresizingMaskIntoConstraints = false
 
         NSLayoutConstraint.activate([
-            // Centraliza verticalmente, com largura igual à view
             customCell.centerYAnchor.constraint(equalTo: view.centerYAnchor),
             customCell.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             customCell.trailingAnchor.constraint(equalTo: view.trailingAnchor),

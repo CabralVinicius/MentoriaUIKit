@@ -67,7 +67,7 @@ class PokemonTableViewCell: UITableViewCell {
             .joined(separator: " • ")
         
         // Carregamento simples de imagem (em prod, use cache ou Kingfisher/SDWebImage)
-        if let url = detail.sprites.front_default {
+        if let url = detail.sprites.frontDefault {
             URLSession.shared.dataTask(with: url) { data, _, _ in
                 guard let d = data, let img = UIImage(data: d) else { return }
                 DispatchQueue.main.async {
