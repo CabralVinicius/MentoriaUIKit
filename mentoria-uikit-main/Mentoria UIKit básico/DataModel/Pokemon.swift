@@ -3,5 +3,3 @@ struct Pokemon {
     let number: Int
     let pokemonImage: String
 }
-
-
